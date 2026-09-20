@@ -53,6 +53,7 @@ nav.top a{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-trans
 nav.top a:hover,nav.top a.on{color:var(--ink);border-bottom-color:var(--gold)}
 /* sections */
 section{padding-block:64px;border-bottom:1px solid var(--border)} section:last-of-type{border-bottom:none}
+section.tab-off{display:none}
 .sec-head{display:grid;gap:14px;margin-bottom:34px;max-width:78ch}
 .sec-head .n{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--gold)}
 .sec-head p{color:var(--soft);font-size:17px}
@@ -912,8 +913,29 @@ document.getElementById('method').innerHTML=[
 })();
 // ---- toggles + nav
 document.querySelectorAll('.tb[data-view]').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.view; const on=b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed',on?'true':'false'); document.getElementById(v).hidden=on; document.getElementById(v+'-table').hidden=!on; b.textContent=on?(v==='lv'?'Full':'Chart'):(v==='lv'?'Compact':'Table');}));
-const navLinks=[...document.querySelectorAll('nav.top a')]; const secs=navLinks.map(a=>document.querySelector(a.getAttribute('href')));
-if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-40% 0px -55% 0px'}); secs.forEach(s=>s&&io.observe(s));}
+// ---- tabbed views: one tab of content at a time, no continuous scroll
+const navLinks=[...document.querySelectorAll('nav.top a')];
+const TABS={summary:['summary'],where:['where'],fifteen:['fifteen','stores'],inside:['inside'],untapped:['untapped'],plan:['plan','scoreboard'],notes:['notes'],about:['about']};
+const OWNER={}; Object.keys(TABS).forEach(t=>TABS[t].forEach(id=>OWNER[id]=t));
+function showTab(tab,push){
+  if(!TABS[tab]) tab='summary';
+  document.querySelectorAll('body > section[id]').forEach(s=>{
+    s.classList.toggle('tab-off',!TABS[tab].includes(s.id));
+  });
+  navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+tab));
+  if(push!==false){try{history.replaceState(null,'','#'+tab);}catch(e){location.hash=tab;}}
+  window.scrollTo({top:0,behavior:'auto'});
+}
+navLinks.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showTab(a.getAttribute('href').slice(1));}));
+// any other in-page anchor (e.g. links into a section) opens its tab first
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]'); if(!a||a.closest('nav.top'))return;
+  const id=a.getAttribute('href').slice(1), tgt=document.getElementById(id); if(!tgt)return;
+  const owner=OWNER[id]||OWNER[(tgt.closest('body > section[id]')||{}).id];
+  if(owner){e.preventDefault();showTab(owner);tgt.scrollIntoView();}
+});
+window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);const t=TABS[h]?h:OWNER[h];if(t)showTab(t,false);const el=h&&document.getElementById(h);if(el&&!TABS[h])el.scrollIntoView();});
+(function(){const h=location.hash.slice(1);showTab(TABS[h]?h:(OWNER[h]||'summary'),false);})();
 </script>
 </body>
 </html>
