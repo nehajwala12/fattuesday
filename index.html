@@ -136,6 +136,151 @@ ul.plain{margin:0;padding-left:18px;color:var(--soft);font-size:14.5px} ul.plain
 .foot{padding-block:40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--border)}
 .foot img{height:32px} .foot p{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--faint)}
 </style>
+<style>
+#about{
+  --ab-ink:#16211F; --ab-cream:#F4EFE6; --ab-gold:#A98543; --ab-heron:#1C4A45;
+  --ab-hair:rgba(22,33,31,.14); --ab-soft:rgba(22,33,31,.78); --ab-faint:rgba(22,33,31,.55);
+  --ab-display:'Cormorant Garamond',Georgia,serif;
+  --ab-body:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --ab-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  background:var(--ab-cream); color:var(--ab-ink);
+  font-family:var(--ab-body); font-size:15.5px; line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+#about *{box-sizing:border-box}
+#about p{margin:0 0 14px}
+#about strong{font-weight:600;color:var(--ab-ink)}
+
+/* hero */
+#about .ab-hero{text-align:center;border-top:5px solid var(--ab-gold);
+  padding:44px 0 36px;border-bottom:1px solid var(--ab-hair)}
+#about .ab-lockup{display:flex;align-items:center;justify-content:center;gap:13px;margin:0 0 24px}
+#about .ab-lockup svg{width:54px;height:48px;flex:0 0 auto;transform:translateY(2px)}
+#about .ab-word{font-family:var(--ab-display);font-weight:600;line-height:1;
+  color:var(--ab-ink);font-size:clamp(36px,5vw,50px);letter-spacing:-1.2px}
+#about .ab-eyebrow{font-family:var(--ab-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--ab-heron);margin:0 0 20px}
+#about .ab-thesis{font-family:var(--ab-display);font-weight:600;color:var(--ab-ink);
+  font-size:clamp(30px,4.2vw,46px);line-height:1.1;letter-spacing:-1px;margin:0}
+#about .ab-thesis em{font-style:italic;color:var(--ab-gold)}
+#about .ab-sum{max-width:640px;margin:22px auto 0;line-height:1.75;color:var(--ab-soft)}
+
+/* two capability cards */
+#about .ab-caps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:36px 0 0}
+#about .ab-cap{border:1px solid var(--ab-hair);border-radius:4px;padding:24px 26px 18px}
+#about .ab-cap .k{font-family:var(--ab-mono);font-size:10px;font-weight:500;
+  letter-spacing:1.8px;text-transform:uppercase;color:var(--ab-heron);margin:0 0 10px}
+#about .ab-cap h3{font-family:var(--ab-display);font-weight:600;font-size:22px;
+  letter-spacing:-.3px;margin:0 0 12px;color:var(--ab-ink)}
+#about .ab-cap ul{margin:0;padding-left:17px;font-size:13.5px;color:var(--ab-soft);line-height:1.6}
+#about .ab-cap li{margin:7px 0}
+
+/* stat strip */
+#about .ab-stats{display:grid;grid-template-columns:repeat(4,1fr);margin:28px 0 0;
+  border-top:1px solid var(--ab-hair);border-bottom:1px solid var(--ab-hair)}
+#about .ab-stat{padding:16px 20px 14px;border-left:1px solid var(--ab-hair)}
+#about .ab-stat:first-child{border-left:0}
+#about .ab-stat .k{font-family:var(--ab-mono);font-size:9px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-faint);margin-bottom:5px}
+#about .ab-stat .n{font-family:var(--ab-mono);font-weight:500;font-size:22px;
+  letter-spacing:-.4px;color:var(--ab-ink)}
+#about .ab-stat.is-accent .n{color:var(--ab-gold)}
+#about .ab-stat .d{font-size:11.5px;line-height:1.5;color:var(--ab-soft);margin-top:5px}
+
+/* closer */
+#about .ab-close{max-width:640px;margin:30px auto 0;text-align:center;color:var(--ab-soft)}
+#about .ab-trustline{font-family:var(--ab-mono);font-size:9.5px;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--ab-faint);text-align:center;margin:22px 0 0}
+#about .ab-colophon{border-top:2px solid var(--ab-ink);margin-top:36px;padding:20px 0 0;
+  text-align:center;font-size:12px;color:var(--ab-soft)}
+#about .ab-colophon strong{font-family:var(--ab-display);font-size:17px;font-weight:600;color:var(--ab-ink)}
+
+/* ── detail sections ── */
+#about h2{font-family:var(--ab-display);font-weight:600;color:var(--ab-ink);
+  font-size:26px;line-height:1.24;letter-spacing:-.5px;
+  margin:52px 0 16px;padding-top:20px;border-top:1px solid var(--ab-hair)}
+#about .ab-lede{max-width:700px;color:var(--ab-soft);font-size:14.5px}
+
+/* three-up cards */
+#about .ab-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0 6px}
+#about .ab-col{border:1px solid var(--ab-hair);border-top:3px solid rgba(22,33,31,.30);
+  border-radius:4px;padding:14px 16px 12px}
+#about .ab-col h5{font-family:var(--ab-mono);font-size:9.5px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-heron);margin:0 0 8px}
+#about .ab-col p{margin:0;font-size:12.5px;color:var(--ab-soft);line-height:1.55}
+#about .ab-col.is-accent{border-top-color:var(--ab-gold)}
+#about .ab-col.is-accent h5{color:var(--ab-gold)}
+
+/* tables */
+#about .ab-tbl{margin:16px 0 8px;overflow-x:auto;border:1px solid var(--ab-hair);border-radius:4px}
+#about .ab-tbl table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.5}
+#about .ab-tbl th{font-family:var(--ab-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;text-align:left;color:var(--ab-heron);
+  padding:11px 12px;border-bottom:1px solid rgba(22,33,31,.30)}
+#about .ab-tbl td{padding:9px 12px;border-bottom:1px solid var(--ab-hair);
+  vertical-align:top;color:var(--ab-ink)}
+#about .ab-tbl tr:last-child td{border-bottom:none}
+#about .ab-tbl td.num{font-family:var(--ab-mono);font-size:12px;letter-spacing:-.2px;white-space:nowrap}
+#about .ab-tbl tr.ab-noterow td{background:rgba(28,74,69,.07);border-left:3px solid var(--ab-heron);
+  font-size:12px;color:var(--ab-soft)}
+#about .ab-tbl tr.ab-noterow .wk{font-family:var(--ab-mono);font-weight:500;font-size:8.5px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-heron);margin-right:9px}
+#about .ab-phase{display:block;font-family:var(--ab-mono);font-size:9px;font-weight:500;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--ab-heron);margin-top:5px}
+
+/* status chips */
+#about .ab-st{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+  font-family:var(--ab-mono);font-size:9.5px;font-weight:500;letter-spacing:1.2px;
+  text-transform:uppercase}
+#about .ab-st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+#about .ab-st.ok{color:var(--ab-heron)}
+#about .ab-st.watch{color:var(--ab-gold)}
+#about .ab-st.breach{color:#5C2B2E}
+
+/* numbered rows */
+#about .ab-rows{margin:14px 0 4px;border-top:1px solid var(--ab-hair)}
+#about .ab-row{display:flex;gap:16px;align-items:flex-start;padding:12px 2px;
+  border-bottom:1px solid var(--ab-hair)}
+#about .ab-num{font-family:var(--ab-mono);font-size:11px;font-weight:500;color:var(--ab-gold);
+  letter-spacing:.08em;flex:0 0 26px;padding-top:3px}
+#about .ab-row strong{display:block;font-size:14px;font-weight:600;color:var(--ab-ink)}
+#about .ab-row em{display:block;font-style:normal;font-size:12.5px;color:var(--ab-soft);
+  margin-top:2px;line-height:1.55}
+
+/* why panel */
+#about .ab-why{margin:22px 0 6px;padding:15px 20px 13px;background:rgba(28,74,69,.07);
+  border:1px solid var(--ab-hair);border-left:3px solid var(--ab-heron);border-radius:4px;font-size:14px}
+#about .ab-why .k{font-family:var(--ab-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-heron);margin:0 0 6px}
+#about .ab-why p{margin:0}
+
+/* ── figures (inline SVG) ── */
+#about .ab-fig{margin:20px 0 10px;border:1px solid var(--ab-hair);border-radius:4px;
+  padding:18px 18px 12px;overflow-x:auto}
+#about .ab-fig svg{display:block;width:100%;height:auto;min-width:560px}
+#about .ab-figcap{font-family:var(--ab-mono);font-size:9px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ab-faint);margin:10px 2px 0}
+#about .fx-l{font-family:var(--ab-mono);font-size:9px;letter-spacing:1.1px;fill:rgba(22,33,31,.55)}
+#about .fx-lt{font-family:var(--ab-mono);font-size:9px;letter-spacing:1.1px;fill:#1C4A45}
+#about .fx-lg{font-family:var(--ab-mono);font-size:9px;letter-spacing:1.1px;fill:#A98543}
+#about .fx-lc{font-family:var(--ab-mono);font-size:9px;letter-spacing:1.1px;fill:#5C2B2E}
+#about .fx-n{font-family:var(--ab-mono);font-size:12px;fill:#16211F}
+#about .fx-b{font-family:var(--ab-body);font-size:11px;fill:rgba(22,33,31,.78)}
+#about .fx-s{font-family:var(--ab-body);font-size:12.5px;font-weight:600;fill:#16211F}
+#about .fx-sub{font-family:var(--ab-body);font-size:10.5px;fill:rgba(22,33,31,.55)}
+
+@media (max-width:760px){
+  #about .ab-caps{grid-template-columns:1fr}
+  #about .ab-stats{grid-template-columns:1fr 1fr}
+  #about .ab-stat:nth-child(3){border-left:0}
+  #about .ab-stat:nth-child(n+3){border-top:1px solid var(--ab-hair)}
+  #about .ab-cols{grid-template-columns:1fr}
+}
+
+/* host-page overrides */
+#about section{padding-block:0;border-bottom:none}
+#about .ab-hero{padding:44px 0 36px}
+</style>
 </head>
 <body>
 <div class="mast"><div class="wrap">
@@ -160,7 +305,7 @@ ul.plain{margin:0;padding-left:18px;color:var(--soft);font-size:14.5px} ul.plain
 </div></div>
 
 <nav class="top"><div class="wrap">
-  <a href="#summary">Short version</a><a href="#where">Where we are</a><a href="#fifteen">The fifteen</a><a href="#inside">Inside the stores</a><a href="#untapped">Untapped</a><a href="#plan">The plan</a><a href="#notes">Notes &amp; method</a>
+  <a href="#summary">Short version</a><a href="#where">Where we are</a><a href="#fifteen">The fifteen</a><a href="#inside">Inside the stores</a><a href="#untapped">Untapped</a><a href="#plan">The plan</a><a href="#notes">Notes &amp; method</a><a href="#about">About CreditSwan</a>
 </div></nav>
 
 <section id="summary"><div class="wrap">
@@ -241,6 +386,263 @@ ul.plain{margin:0;padding-left:18px;color:var(--soft);font-size:14.5px} ul.plain
     <div><span class="label">How the numbers were built</span><ul class="plain" id="method" style="margin-top:12px"></ul></div>
   </div>
   <div class="fig"><div class="fig-head"><div><h3>Appendix: all 78 comp stores</h3><p>Click a column heading to sort.</p></div></div><div class="tablewrap" id="all-table"></div></div>
+</div></section>
+
+<section id="about" aria-label="About CreditSwan"><div class="wrap">
+
+  <section class="ab-hero">
+    <div class="ab-lockup">
+      <svg viewBox="7 12.6 26 23" fill="none" aria-hidden="true"><path d="M8 30c0-9 6-16 15-16 4 0 7 1 9 4-2-1-4-1-6 0 3 0 5 2 6 5-4-2-8-1-11 2-3 3-8 4-13 5z" fill="#16211F"/><circle cx="30.5" cy="15.5" r="1.4" fill="#A98543"/></svg>
+      <span class="ab-word">CreditSwan</span>
+    </div>
+    <p class="ab-eyebrow">Underwriting Intelligence for Private Credit</p>
+    <h1 class="ab-thesis">Diligence that prices the credit.<br>A <em>weekly pulse</em> that protects it.</h1>
+    <p class="ab-sum">Verified unit economics, computed from raw borrower systems — then monitored every week for the life of the credit. Consumer goods, consumer services and food &amp; beverage.</p>
+  </section>
+
+  <div class="ab-caps">
+    <div class="ab-cap"><p class="k">01 · At underwriting</p><h3>Commercial diligence</h3><ul>
+      <li><strong>Every figure computed from source systems</strong> — Shopify, Amazon, Stripe, NetSuite and hundreds more — and reconciled to the GL.</li>
+      <li>What QoE and field exams miss: CAC, cohorts, channel mix, deductions.</li>
+      <li>IC-ready files in credit-committee language, in days.</li>
+    </ul></div>
+    <div class="ab-cap"><p class="k">02 · For the hold period</p><h3>Weekly monitoring</h3><ul>
+      <li><strong>The diligence pipes stay on</strong> — ~14 operating series read every Monday, straight from the same source systems.</li>
+      <li>Pre-registered thresholds. A breach gets a written diagnosis and a recommended change — never a silent account edit.</li>
+      <li>Drift surfaces months before the quarterly certificate.</li>
+    </ul></div>
+  </div>
+
+  <div class="ab-stats">
+    <div class="ab-stat"><div class="k">Monitored weekly</div><div class="n">~14</div><div class="d">operating series per credit</div></div>
+    <div class="ab-stat is-accent"><div class="k">Caught automatically</div><div class="n">$16.5K</div><div class="d">ad spend pulled off dead pages</div></div>
+    <div class="ab-stat"><div class="k">Flagged earlier</div><div class="n">Wk 3, not 25</div><div class="d">a runaway promo, caught at its cap</div></div>
+    <div class="ab-stat"><div class="k">Median clear</div><div class="n">1 week</div><div class="d">breach to diagnosed and resolved</div></div>
+  </div>
+
+  <h2 id="about-diligence">The diligence, in detail</h2>
+
+  <p class="ab-lede">A quality-of-earnings report validates the accounting. A field exam validates the collateral, at a point in time. Neither answers the question that prices a consumer credit — <strong>is the revenue durable, and what does it cost to hold.</strong></p>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 172" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coverage matrix: what each diligence lens validates">
+    <text class="fx-lt" x="220" y="16" text-anchor="middle">ACCOUNTING</text>
+    <text class="fx-lt" x="355" y="16" text-anchor="middle">COLLATERAL</text>
+    <text class="fx-lt" x="490" y="16" text-anchor="middle">COMMERCIAL ENGINE</text>
+    <text class="fx-lg" x="625" y="16" text-anchor="middle">CREDIT TERMS</text>
+    <line x1="0" y1="28" x2="700" y2="28" stroke="rgba(22,33,31,.30)" stroke-width="1"/>
+    <text class="fx-s" x="0" y="54">Quality of Earnings</text>
+    <text class="fx-sub" x="0" y="68">accepts management's narrative</text>
+    <circle cx="220" cy="52" r="7" fill="#1C4A45"/>
+    <circle cx="355" cy="52" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <circle cx="490" cy="52" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <circle cx="625" cy="52" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <line x1="0" y1="76" x2="700" y2="76" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-s" x="0" y="100">Field Exam</text>
+    <text class="fx-sub" x="0" y="114">point-in-time, blind to demand</text>
+    <circle cx="220" cy="98" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <circle cx="355" cy="98" r="7" fill="#1C4A45"/>
+    <circle cx="490" cy="98" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <circle cx="625" cy="98" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <line x1="0" y1="122" x2="700" y2="122" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-s" x="0" y="146">CreditSwan</text>
+    <text class="fx-sub" x="0" y="160">computed from source systems</text>
+    <circle cx="220" cy="144" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <circle cx="355" cy="144" r="7" fill="none" stroke="rgba(22,33,31,.30)"/>
+    <circle cx="490" cy="144" r="7" fill="#A98543"/>
+    <circle cx="625" cy="144" r="7" fill="#A98543"/>
+  </svg><p class="ab-figcap">What each lens validates — only CreditSwan reaches the commercial engine, and translates it into credit terms</p></div>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 232" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Waterfall from the seller's revenue figure to the verified net figure">
+    <line x1="0" y1="190" x2="700" y2="190" stroke="rgba(22,33,31,.30)"/>
+    <rect x="30" y="40" width="90" height="150" fill="rgba(22,33,31,.30)"/>
+    <text class="fx-n" x="75" y="30" text-anchor="middle">100</text>
+    <line x1="120" y1="40" x2="165" y2="40" stroke="rgba(22,33,31,.30)" stroke-dasharray="3 3"/>
+    <rect x="165" y="40" width="90" height="18" fill="#5C2B2E"/>
+    <text class="fx-n" x="210" y="30" text-anchor="middle" fill="#5C2B2E">−12</text>
+    <line x1="255" y1="58" x2="300" y2="58" stroke="rgba(22,33,31,.30)" stroke-dasharray="3 3"/>
+    <rect x="300" y="58" width="90" height="14" fill="#5C2B2E"/>
+    <text class="fx-n" x="345" y="48" text-anchor="middle" fill="#5C2B2E">−9</text>
+    <line x1="390" y1="72" x2="435" y2="72" stroke="rgba(22,33,31,.30)" stroke-dasharray="3 3"/>
+    <rect x="435" y="72" width="90" height="10" fill="#5C2B2E"/>
+    <text class="fx-n" x="480" y="62" text-anchor="middle" fill="#5C2B2E">−7</text>
+    <line x1="525" y1="82" x2="570" y2="82" stroke="rgba(22,33,31,.30)" stroke-dasharray="3 3"/>
+    <rect x="570" y="82" width="90" height="108" fill="#A98543"/>
+    <text class="fx-n" x="615" y="72" text-anchor="middle" fill="#A98543">72</text>
+    <text class="fx-l" x="75" y="208" text-anchor="middle">SELLER'S NUMBER</text>
+    <text class="fx-l" x="210" y="208" text-anchor="middle">RETURNS, MATURED</text>
+    <text class="fx-l" x="345" y="208" text-anchor="middle">DEDUCTIONS &amp; TRADE</text>
+    <text class="fx-l" x="480" y="208" text-anchor="middle">PROMO DEPTH</text>
+    <text class="fx-lg" x="615" y="208" text-anchor="middle">VERIFIED NET</text>
+  </svg><p class="ab-figcap">Illustrative — the gross-to-net bridge First Look runs in 4 days, from the seller's number to ours</p></div>
+
+  <div class="ab-tbl"><table><thead><tr><th>Engagement</th><th>Clock</th><th>What it delivers</th></tr></thead><tbody>
+  <tr><td><strong>01 · First Look</strong><span class="ab-phase">Exclusivity</span></td><td class="num"><strong>4 days</strong></td><td>Gross-to-net, contribution margin, CAC and cohort economics from the seller's number to ours. <strong>The go / no-go call.</strong></td></tr>
+  <tr><td><strong>02 · Underwriting File</strong><span class="ab-phase">Close</span></td><td class="num"><strong>2–3 wks</strong></td><td>Full data-room ingestion; every figure computed from raw exports and reconciled to the GL. An IC-ready file in credit-committee language — typically funded in transaction costs at close.</td></tr>
+  <tr><td><strong>03 · Surveillance</strong><span class="ab-phase">Hold period</span></td><td class="num"><strong>Weekly</strong></td><td>The same evidence base keeps reading — an annual surveillance tail per credit, the ratings-agency model applied to private credit.</td></tr>
+  </tbody></table></div>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deal-clock timeline: First Look, Underwriting, then weekly Surveillance after close">
+    <text class="fx-lg" x="0" y="24">FIRST LOOK · 4 DAYS</text>
+    <text class="fx-lt" x="132" y="24">UNDERWRITING · 2–3 WKS</text>
+    <text class="fx-l" x="260" y="12" text-anchor="middle">CLOSE</text>
+    <text class="fx-l" x="272" y="24">SURVEILLANCE · EVERY MONDAY, FOR THE LIFE OF THE CREDIT</text>
+    <rect x="0" y="44" width="70" height="14" fill="#A98543"/>
+    <rect x="70" y="44" width="189" height="14" fill="#1C4A45"/>
+    <rect x="259" y="28" width="2" height="44" fill="#16211F"/>
+    <rect x="262" y="44" width="408" height="14" fill="#E9C583" opacity=".4"/>
+    <line x1="279" y1="44" x2="279" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="313" y1="44" x2="313" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="347" y1="44" x2="347" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="381" y1="44" x2="381" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="415" y1="44" x2="415" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="449" y1="44" x2="449" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="483" y1="44" x2="483" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="517" y1="44" x2="517" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="551" y1="44" x2="551" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="585" y1="44" x2="585" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="619" y1="44" x2="619" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <line x1="653" y1="44" x2="653" y2="58" stroke="rgba(22,33,31,.35)"/>
+    <polygon points="670,42 670,60 686,51" fill="#E9C583" opacity=".9"/>
+    <text class="fx-l" x="0" y="82" font-size="8">FLAT FEE</text>
+    <text class="fx-l" x="132" y="82" font-size="8">FUNDED AT CLOSE</text>
+    <text class="fx-l" x="272" y="82" font-size="8">ANNUAL TAIL PER CREDIT · EACH TICK A MONDAY RUN</text>
+  </svg><p class="ab-figcap">Priced like a rating — a fee at underwriting, a surveillance tail for the hold period</p></div>
+
+  <h2 id="about-monitoring">The monitoring, in detail</h2>
+
+  <p class="ab-lede">Every Monday at 06:00 ET, each monitor reads the borrower's source systems and tests a threshold registered <strong>before</strong> it went live. A live board from a credit under surveillance:</p>
+
+  <div class="ab-tbl"><table><thead><tr><th>Monitor</th><th>Watches</th><th>Threshold</th><th>This week</th><th>Status</th></tr></thead><tbody>
+  <tr><td><strong>Revenue pacing</strong></td><td>Reconciled to the bank, not the dashboard</td><td class="num">±6.0% wk/wk</td><td class="num">−1.8%</td><td><span class="ab-st ok">In band</span></td></tr>
+  <tr><td><strong>Discount penetration</strong></td><td>Share of returning orders discounted</td><td class="num">22–34%</td><td class="num">27%</td><td><span class="ab-st ok">In band</span></td></tr>
+  <tr><td><strong>Inventory cover</strong></td><td>Priority styles, size-curve weighted</td><td class="num">≥ 6.0 wks</td><td class="num">4.7 wks</td><td><span class="ab-st breach">Breach</span></td></tr>
+  <tr><td><strong>Promo duration</strong></td><td>Every live code vs. its registered cap</td><td class="num">cap 21 days</td><td class="num">47 days</td><td><span class="ab-st breach">Breach</span></td></tr>
+  <tr><td><strong>Return rate</strong></td><td>Matured, by cohort — not the 30-day illusion</td><td class="num">base 17.5%</td><td class="num">18.9%</td><td><span class="ab-st watch">Watch</span></td></tr>
+  <tr><td><strong>Brand share of search</strong></td><td>Demand the auction can't rent</td><td class="num">≥ 60%</td><td class="num">66.5%</td><td><span class="ab-st ok">In band</span></td></tr>
+  <tr class="ab-noterow"><td colspan="5"><span class="wk">The two breaches</span>The inventory rule had already pulled the style's four ad URLs — paid spend never points at a page that can't convert. The runaway code was escalated with a diagnosis and a recommended change, never a silent account edit.</td></tr>
+  </tbody></table></div>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 205" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line chart of a monitored metric against its pre-registered band, with one breach flagged">
+    <rect x="50" y="65" width="630" height="70" fill="#E9C583" opacity=".18"/>
+    <line x1="50" y1="65" x2="680" y2="65" stroke="rgba(22,33,31,.30)" stroke-dasharray="4 3"/>
+    <line x1="50" y1="135" x2="680" y2="135" stroke="rgba(22,33,31,.30)" stroke-dasharray="4 3"/>
+    <line x1="50" y1="170" x2="680" y2="170" stroke="rgba(22,33,31,.30)"/>
+    <text class="fx-l" x="44" y="68" text-anchor="end" font-size="8">14.5%</text>
+    <text class="fx-l" x="44" y="138" text-anchor="end" font-size="8">11.5%</text>
+    <polyline points="80,95 152,105 224,88 296,77 368,91 440,51 512,79 584,100 656,95" fill="none" stroke="#A98543" stroke-width="2"/>
+    <circle cx="80" cy="95" r="3.5" fill="#A98543"/><circle cx="152" cy="105" r="3.5" fill="#A98543"/>
+    <circle cx="224" cy="88" r="3.5" fill="#A98543"/><circle cx="296" cy="77" r="3.5" fill="#A98543"/>
+    <circle cx="368" cy="91" r="3.5" fill="#A98543"/><circle cx="512" cy="79" r="3.5" fill="#A98543"/>
+    <circle cx="584" cy="100" r="3.5" fill="#A98543"/><circle cx="656" cy="95" r="3.5" fill="#A98543"/>
+    <circle cx="440" cy="51" r="5.5" fill="#5C2B2E"/>
+    <text class="fx-lc" x="440" y="34" text-anchor="middle" font-size="8.5">BREACH — DIAGNOSED THAT MONDAY</text>
+    <text class="fx-l" x="80" y="188" text-anchor="middle" font-size="8">W1</text>
+    <text class="fx-l" x="152" y="188" text-anchor="middle" font-size="8">W2</text>
+    <text class="fx-l" x="224" y="188" text-anchor="middle" font-size="8">W3</text>
+    <text class="fx-l" x="296" y="188" text-anchor="middle" font-size="8">W4</text>
+    <text class="fx-l" x="368" y="188" text-anchor="middle" font-size="8">W5</text>
+    <text class="fx-l" x="440" y="188" text-anchor="middle" font-size="8">W6</text>
+    <text class="fx-l" x="512" y="188" text-anchor="middle" font-size="8">W7</text>
+    <text class="fx-l" x="584" y="188" text-anchor="middle" font-size="8">W8</text>
+    <text class="fx-l" x="656" y="188" text-anchor="middle" font-size="8">W9</text>
+  </svg><p class="ab-figcap">How a monitor reads — the metric on its registered basis vs. a band set before go-live (shaded 11.5–14.5%) · illustrative</p></div>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nine-week monitor board heatmap: six monitors across nine Mondays">
+    <text class="fx-l" x="145" y="20" text-anchor="middle" font-size="8">W1</text>
+    <text class="fx-l" x="209" y="20" text-anchor="middle" font-size="8">W2</text>
+    <text class="fx-l" x="273" y="20" text-anchor="middle" font-size="8">W3</text>
+    <text class="fx-l" x="337" y="20" text-anchor="middle" font-size="8">W4</text>
+    <text class="fx-l" x="401" y="20" text-anchor="middle" font-size="8">W5</text>
+    <text class="fx-l" x="465" y="20" text-anchor="middle" font-size="8">W6</text>
+    <text class="fx-l" x="529" y="20" text-anchor="middle" font-size="8">W7</text>
+    <text class="fx-l" x="593" y="20" text-anchor="middle" font-size="8">W8</text>
+    <text class="fx-l" x="657" y="20" text-anchor="middle" font-size="8">W9</text>
+    <text class="fx-lt" x="105" y="48" text-anchor="end">REVENUE</text>
+    <rect x="115" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="179" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="243" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="307" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="371" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="435" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="499" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="563" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="627" y="30" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="105" y="82" text-anchor="end">DISCOUNTS</text>
+    <rect x="115" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="179" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="243" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="307" y="64" width="60" height="28" rx="2" fill="#5C2B2E" opacity=".85"/><rect x="371" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="435" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="499" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="563" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="627" y="64" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="105" y="116" text-anchor="end">INVENTORY</text>
+    <rect x="115" y="98" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="179" y="98" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="243" y="98" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="307" y="98" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="371" y="98" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="435" y="98" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="499" y="98" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="563" y="98" width="60" height="28" rx="2" fill="#5C2B2E" opacity=".85"/><rect x="627" y="98" width="60" height="28" rx="2" fill="#5C2B2E" opacity=".85"/>
+    <text class="fx-lt" x="105" y="150" text-anchor="end">PROMOS</text>
+    <rect x="115" y="132" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="179" y="132" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="243" y="132" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="307" y="132" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="371" y="132" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="435" y="132" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="499" y="132" width="60" height="28" rx="2" fill="#5C2B2E" opacity=".85"/><rect x="563" y="132" width="60" height="28" rx="2" fill="#5C2B2E" opacity=".85"/><rect x="627" y="132" width="60" height="28" rx="2" fill="#5C2B2E" opacity=".85"/>
+    <text class="fx-lt" x="105" y="184" text-anchor="end">RETURNS</text>
+    <rect x="115" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="179" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="243" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="307" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="371" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="435" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="499" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="563" y="166" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="627" y="166" width="60" height="28" rx="2" fill="#E9C583" opacity=".85"/>
+    <text class="fx-lt" x="105" y="218" text-anchor="end">SEARCH</text>
+    <rect x="115" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="179" y="200" width="60" height="28" rx="2" fill="#5C2B2E" opacity=".85"/><rect x="243" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="307" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="371" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="435" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="499" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="563" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><rect x="627" y="200" width="60" height="28" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/>
+    <rect x="115" y="246" width="12" height="12" rx="2" fill="#1C4A45" opacity=".10" stroke="rgba(22,33,31,.14)"/><text class="fx-l" x="133" y="256">IN BAND</text>
+    <rect x="215" y="246" width="12" height="12" rx="2" fill="#E9C583" opacity=".85"/><text class="fx-l" x="233" y="256">WATCH</text>
+    <rect x="305" y="246" width="12" height="12" rx="2" fill="#5C2B2E" opacity=".85"/><text class="fx-l" x="323" y="256">BREACH</text>
+  </svg><p class="ab-figcap">Nine Mondays on the board — 4 incidents flagged · 2 cleared inside a week · 2 open · nothing found by someone deciding to go look</p></div>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Escalation chain: Detect, Diagnose, Approve, Act">
+    <rect x="0" y="20" width="154" height="100" rx="4" fill="none" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="14" y="44">01 · DETECT</text>
+    <text class="fx-b" x="14" y="66">Reads source systems,<tspan x="14" dy="15">tests the registered</tspan><tspan x="14" dy="15">threshold</tspan></text>
+    <line x1="158" y1="70" x2="172" y2="70" stroke="rgba(22,33,31,.30)"/><polygon points="172,65 172,75 180,70" fill="rgba(22,33,31,.30)"/>
+    <rect x="182" y="20" width="154" height="100" rx="4" fill="none" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="196" y="44">02 · DIAGNOSE</text>
+    <text class="fx-b" x="196" y="66">Decomposes the breach —<tspan x="196" dy="15">mix, volume, price, or</tspan><tspan x="196" dy="15">measurement artefact</tspan></text>
+    <line x1="340" y1="70" x2="354" y2="70" stroke="rgba(22,33,31,.30)"/><polygon points="354,65 354,75 362,70" fill="rgba(22,33,31,.30)"/>
+    <rect x="364" y="20" width="154" height="100" rx="4" fill="rgba(28,74,69,.07)" stroke="rgba(22,33,31,.14)"/>
+    <rect x="364" y="20" width="154" height="3" fill="#A98543"/>
+    <text class="fx-lt" x="378" y="44">03 · APPROVE</text>
+    <text class="fx-b" x="378" y="66">Smallest reversible change,<tspan x="378" dy="15">sized in dollars — a named</tspan><tspan x="378" dy="15">owner signs off</tspan></text>
+    <line x1="522" y1="70" x2="536" y2="70" stroke="rgba(22,33,31,.30)"/><polygon points="536,65 536,75 544,70" fill="rgba(22,33,31,.30)"/>
+    <rect x="546" y="20" width="154" height="100" rx="4" fill="none" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="560" y="44">04 · ACT</text>
+    <text class="fx-b" x="560" y="66">One-page Monday note —<tspan x="560" dy="15">covenant talks, budget</tspan><tspan x="560" dy="15">moves. Nothing</tspan><tspan x="560" dy="15">auto-executes</tspan></text>
+  </svg><p class="ab-figcap">The four-stage chain — the thing that detects is never the thing that edits, and no threshold moves after go-live</p></div>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Detection speed: week 25 at the post-mortem versus week 3 at the monitor's cap">
+    <text class="fx-l" x="150" y="24" font-size="8.5">REVIEWED AFTER A BAD MONTH — FOUND AT THE POST-MORTEM, WEEK 25</text>
+    <text class="fx-l" x="140" y="42" text-anchor="end">WITHOUT MONITORS</text>
+    <rect x="150" y="30" width="520" height="16" fill="rgba(22,33,31,.30)"/>
+    <text class="fx-lg" x="150" y="66" font-size="8.5">FLAGGED AT ITS 21-DAY CAP — WEEK 3</text>
+    <text class="fx-l" x="140" y="84" text-anchor="end">WITH MONITORS</text>
+    <rect x="150" y="72" width="62" height="16" fill="#A98543"/>
+    <line x1="150" y1="102" x2="670" y2="102" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-l" x="254" y="116" text-anchor="middle" font-size="8">W5</text>
+    <text class="fx-l" x="358" y="116" text-anchor="middle" font-size="8">W10</text>
+    <text class="fx-l" x="462" y="116" text-anchor="middle" font-size="8">W15</text>
+    <text class="fx-l" x="566" y="116" text-anchor="middle" font-size="8">W20</text>
+    <text class="fx-l" x="670" y="116" text-anchor="middle" font-size="8">W25</text>
+  </svg><p class="ab-figcap">The same runaway promo, two ways — 22 weeks of margin saved by a threshold doing its job</p></div>
+
+  <div class="ab-why"><p class="k">Why it reads months earlier than a covenant certificate</p><p><strong>Registered bases</strong> — matured cohorts and bank-reconciled revenue, so a flattering 30-day read never masquerades as final. <strong>Registered thresholds</strong> — set before go-live, so nobody moves the line after the fact. <strong>Weekly cadence</strong> — drift surfaces while it is still a conversation, not a covenant event.</p></div>
+
+  <h2 id="about-sources">Hundreds of sources. One defensible number.</h2>
+
+  <div class="ab-fig"><svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline: source systems, capture, compute, deliver">
+    <rect x="0" y="20" width="154" height="100" rx="4" fill="none" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="14" y="44">01 · SOURCE</text>
+    <text class="fx-b" x="14" y="66">Raw exports &amp; live APIs —<tspan x="14" dy="15">Shopify, Stripe, NetSuite</tspan><tspan x="14" dy="15">and hundreds more</tspan></text>
+    <line x1="158" y1="70" x2="172" y2="70" stroke="rgba(22,33,31,.30)"/><polygon points="172,65 172,75 180,70" fill="rgba(22,33,31,.30)"/>
+    <rect x="182" y="20" width="154" height="100" rx="4" fill="none" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="196" y="44">02 · CAPTURE</text>
+    <text class="fx-b" x="196" y="66">Immutable snapshots —<tspan x="196" dy="15">every field fingerprinted</tspan><tspan x="196" dy="15">to its source</tspan></text>
+    <line x1="340" y1="70" x2="354" y2="70" stroke="rgba(22,33,31,.30)"/><polygon points="354,65 354,75 362,70" fill="rgba(22,33,31,.30)"/>
+    <rect x="364" y="20" width="154" height="100" rx="4" fill="rgba(28,74,69,.07)" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="378" y="44">03 · COMPUTE</text>
+    <text class="fx-b" x="378" y="66">Deterministic Python +<tspan x="378" dy="15">SQL — no LLM ever</tspan><tspan x="378" dy="15">generates a figure</tspan></text>
+    <line x1="522" y1="70" x2="536" y2="70" stroke="rgba(22,33,31,.30)"/><polygon points="536,65 536,75 544,70" fill="rgba(22,33,31,.30)"/>
+    <rect x="546" y="20" width="154" height="100" rx="4" fill="none" stroke="rgba(22,33,31,.14)"/>
+    <text class="fx-lt" x="560" y="44">04 · DELIVER</text>
+    <text class="fx-b" x="560" y="66">IC-ready underwriting<tspan x="560" dy="15">file + the weekly</tspan><tspan x="560" dy="15">monitoring feed</tspan></text>
+  </svg><p class="ab-figcap">One pipeline — diligence and monitoring run on the same rails, with lineage attached to every number</p></div>
+
+  <div class="ab-tbl"><table><tbody>
+  <tr><td><strong>Commerce &amp; payments</strong></td><td>Shopify · Amazon SP-API · Walmart · Stripe · Adyen · Recharge · Toast · Square</td></tr>
+  <tr><td><strong>ERP &amp; accounting</strong></td><td>NetSuite · QuickBooks · Sage Intacct · Xero · Dynamics 365 · Restaurant365</td></tr>
+  <tr><td><strong>Marketing &amp; retail</strong></td><td>Meta · Google · TikTok · Klaviyo · SPS Commerce EDI · Circana · NielsenIQ · SPINS</td></tr>
+  <tr class="ab-noterow"><td colspan="2"><span class="wk">And hundreds more</span>Plus VDR-native intake — Datasite, Intralinks, iDeals. No engagement ever waits on a connector. All money math is deterministic Python + SQL; <strong>no LLM ever generates a reported figure.</strong></td></tr>
+  </tbody></table></div>
+
+  <p class="ab-close"><strong>Live today</strong> with private-credit and direct-lending teams — one evidence base, from first look to final payoff. Every number carries a source. A flagged gap beats a guess.</p>
+
+  <p class="ab-trustline">AWS · AES-256 · SOC 2 · Zero model egress · Never trained on client data</p>
+
+  <div class="ab-colophon"><strong>◆ creditswan.ai</strong> · Request a sample underwriting file</div>
+
 </div></section>
 
 <div class="wrap"><div class="foot"><img src="assets/lockup-dark-text.svg" alt="CreditSwan"><p>Prepared by CreditSwan for Fat Tuesday · Data through 17 September 2026 · Confidential</p></div></div>
